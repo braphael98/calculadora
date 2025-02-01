@@ -15,24 +15,21 @@ function imc() {
         let classificacao = "";
 
         if (valorIMC < 18.5) {
-            restultado.textContent = valorIMC + ' Voce esta abaixo do peso'
-        }
-        if (valorIMC > 25) {
-           restultado.textContent = valorIMC + ' Voce esta sobre peso'
-            if(valorIMC > 29.9){
-                restultado.textContent = valorIMC + ' Voce esta obesidade 1'
-            }
-            if(valorIMC > 34.9){
-                restultado.textContent = valorIMC + ' Voce esta obesidade 2'
-            }
-            if(valorIMC > 39,9){
-                 restultado.textContent = valorIMC + ' Voce esta obesidade 3'
-            }
-            if (valorIMC > 40){
-                 restultado.textContent = valorIMC + ' besidade Morbida'
-            }
+            classificacao = "abaixo do peso.";            
+        } else if(valorIMC < 25){
+            classificacao = "com peso ideal.";
+        } else if (valorIMC < 30){
+            classificacao = "voce esta levemente acima do peso";
+        } else if (valorIMC <35){
+            classificacao = "com obesidade grau 1";
+        } else if(valorIMC < 40){
+            classificacao = "obesidade grau 2";
+        }else{
+            classificacao = "Obesidade grau 3";
         }
 
+        
+        restultado.textContent = `${nome} seu IMC é: ${valorIMC} e você esta ${classificacao}`;
 
     } else {
         restultado.textContent = 'Preencha todos os campos para calcular !'
